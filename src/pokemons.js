@@ -64,3 +64,15 @@ function orderAlphabetically(array){
 }
 
 // Iteration 7: Strong pokemons - return an array of first 15 pokemons, that have just one `weakness`. If there are less that 15, return all of them 
+
+function strongPokemons(array){
+    const cloneArray = [];
+    for(i=0;i<array.length;i++){cloneArray.push(array[i])}
+    const oneWeakness = cloneArray.filter(a=> a.weaknesses.length === 1);
+    const onlyName = oneWeakness.map(a => a.name);
+    const tillFifteen = [];
+    for(i=0;i<15 && i<onlyName.length;i++){
+        tillFifteen.push(onlyName[i])
+    }
+    return tillFifteen;
+}
